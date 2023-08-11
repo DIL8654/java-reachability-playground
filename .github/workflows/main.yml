@@ -1,0 +1,11 @@
+name: Dilanka's workflow for Maven using Snyk
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/maven@master
+        env:
+          SNYK_TOKEN: c90169f4-382e-4277-912a-a1992689a86d
